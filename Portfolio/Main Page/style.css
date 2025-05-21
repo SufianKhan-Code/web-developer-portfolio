@@ -1,0 +1,186 @@
+/* === GLOBAL RESETS === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* === NAVIGATION === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+}
+
+.nav-links a {
+  margin-left: 30px;
+  font-weight: 500;
+  color: #444;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f4aa1d;
+}
+
+.nav-links a.active {
+  color: #f4aa1d;
+  font-weight: bold;
+}
+
+/* === HERO SECTION === */
+.hero {
+  background-color: #fff8e1;
+  padding: 80px 40px;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.text-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.role {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f4aa1d;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.text-content h1 {
+  font-size: 36px;
+  margin-bottom: 16px;
+  color: #222;
+}
+
+.text-content h1 span {
+  color: #000;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn.yellow {
+  background-color: #f4aa1d;
+  color: #fff;
+  border: none;
+}
+
+.btn.yellow:hover {
+  background-color: #d89210;
+}
+
+.btn.outline {
+  background-color: transparent;
+  color: #222;
+  border: 2px solid #222;
+}
+
+.btn.outline:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+.image-content {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-content h1 {
+    font-size: 28px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
