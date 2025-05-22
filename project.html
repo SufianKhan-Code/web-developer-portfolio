@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects - Your Name</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* === GLOBAL RESETS === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* === NAVIGATION BAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f4aa1d;
+}
+
+.nav-links a.active {
+  color: #f4aa1d;
+  font-weight: bold;
+}
+
+/* === HERO SECTION (Home) === */
+.hero {
+  background-color: #fff8e1;
+  padding: 80px 40px;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.text-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.role {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f4aa1d;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.text-content h1 {
+  font-size: 36px;
+  margin-bottom: 16px;
+  color: #222;
+}
+
+.text-content h1 span {
+  color: #000;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn.yellow {
+  background-color: #f4aa1d;
+  color: #fff;
+  border: none;
+}
+
+.btn.yellow:hover {
+  background-color: #d89210;
+}
+
+.btn.outline {
+  background-color: transparent;
+  color: #222;
+  border: 2px solid #222;
+}
+
+.btn.outline:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+.image-content {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* === ABOUT PAGE SECTION === */
+.about {
+  background-color: #ffffff;
+  padding: 80px 40px;
+}
+
+.about .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #222;
+  text-align: center;
+  font-weight: bold;
+}
+
+.about-content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.8;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+}
+
+.about-text strong {
+  color: #000;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* === PROJECTS PAGE SECTION === */
+.projects {
+  background-color: #f9f9f9;
+  padding: 80px 40px;
+}
+
+.projects .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects h2 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #222;
+  font-weight: bold;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.project-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.project-card p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero-content,
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-content h1,
+  .about h2,
+  .projects h2 {
+    font-size: 28px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .about-text, .about-image {
+    max-width: 100%;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- === NAVBAR === -->
+  <header class="navbar">
+    <div class="logo">MUHAMMED SUFIYAN KHAN</div>
+    <nav class="nav-links">
+      <a href="/Main Page/index.html">Home</a>
+      <a href="/About/about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="/contect/contect.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- === PROJECTS SECTION === -->
+  <section class="projects">
+    <div class="container">
+      <h2>My Projects</h2>
+      <div class="project-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <img src="a.jpg" alt="Project 1 Screenshot">
+          <h3>Portfolio Website</h3>
+          <p>A clean and responsive personal portfolio site built with HTML, CSS, and JavaScript.</p>
+          <a href="project 1.html" class="btn yellow" target="_blank">View Project</a>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-card">
+          <img src="A..jpg" alt="Project 2 Screenshot">
+          <h3>Todo App</h3>
+          <p>A simple and efficient to-do list web app using React.js and localStorage.</p>
+          <a href="TODO.html" class="btn yellow" target="_blank">View Project</a>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card">
+          <img src="b.jpg" alt="Project 3 Screenshot">
+          <h3>E-commerce Page</h3>
+          <p>An e-commerce product page with cart functionality and filter system.</p>
+          <a href="e.commerce.html" class="btn yellow" target="_blank">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
